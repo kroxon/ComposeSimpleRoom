@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -92,9 +93,11 @@ fun contactRow(contact: Contact, onDelete: ((Contact) -> Unit)? = null) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .fillMaxHeight()
                     .padding(start = 10.dp, end = 10.dp, top = 10.dp, bottom = 2.dp)
                     .background(Color.Red),
-                horizontalArrangement = Arrangement.End
+                horizontalArrangement = Arrangement.End,
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 val imageVector = ImageVector.vectorResource(id = R.drawable.ic_delete)
                 Icon(imageVector = imageVector, contentDescription = null)
